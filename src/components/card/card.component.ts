@@ -2,21 +2,23 @@ import { Component } from '@angular/core';
 import { PersonajesService } from 'src/services/personajes.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
 })
-export class AppComponent {
-  title = 'pruebaICTHUS';
+export class CardComponent {
 
-  constructor(
+  constructor (
     private personajesService: PersonajesService
   ) { }
+
+  personajes: any = [];
 
   ngOnInit() {
     this.personajesService.getPersonajes().subscribe(
       (data: any) => {
-        console.log(data);
+        this.personajes = data.docs;
+        console.log(this.personajes);
       },
       (error) => {
         console.log(error);

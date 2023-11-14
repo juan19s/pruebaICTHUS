@@ -1,0 +1,43 @@
+<div *ngFor="let personaje of personajes" class="card">
+    <div class="header">
+        <h1>Springfield, IL</h1>
+    </div>
+    <div class="section">
+        <div class="info">
+            <p>LICENSE #</p>
+            <p id="licenseNumber">666</p>
+        </div>
+        <div class="info">
+            <p>BIRTH DATE</p>
+            <p id="birthDate">666</p>
+        </div>
+        <div class="info">
+            <p>EXPIRES</p>
+            <p id="expires">666</p>
+        </div>
+    </div>
+    <div class="photo-section">
+        <div class="photo"><img class="photo__img" [src]="personaje.Imagen || '' " alt=""></div>
+        <div class="driver-info">
+            <h2>DRIVER'S LICENSE</h2>
+            <p id="name">{{ personaje.Nombre }}</p>
+            <p id="address">{{ personaje.Ocupacion }}</p>
+            <div class="details">
+                <p>SEX</p>
+                <p id="sex">M</p>
+            </div>
+            <div class="details">
+                <p>ALIVE</p>
+                <p id="alive">D</p>
+            </div>
+            <div class="details">
+                <p>WEIGHT</p>
+                <p id="weight">66</p>
+            </div>
+            <div class="signature">
+                <p id="signature">Signature</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
