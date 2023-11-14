@@ -1,5 +1,36 @@
-<h1>the Simpsons</h1>
+<mat-tab-group>
+  <mat-tab label="Buscador">
+    <div class="container">
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." (keyup)="onInputChange($event)" [(ngModel)]="searchText">
+      </div>
+      <ul *ngIf="personajesPosibles.length > 0" class="dropdown-list">
+        <li (click)="selectPersonaje(personaje)" *ngFor="let personaje of personajesPosibles">{{ personaje.Nombre }}</li>
+      </ul>
+    </div>
 
-<div class="cards">
-    <app-card></app-card>
-</div>
+    <div class="cards" *ngIf="selectedPersonaje">
+      <app-card [personaje]="selectedPersonaje"></app-card>
+    </div>
+
+    <div class="containerr">
+      <div *ngFor="let personaje of paginatedPersonajes">
+        <app-card [personaje]="personaje" [botonFav]="true"></app-card>
+      </div>
+    </div>
+
+    <mat-paginator
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      [length]="personajes.length"
+      (page)="handlePage($event)">
+    </mat-paginator>
+  </mat-tab>
+  <mat-tab label="Favoritos">
+    <div class="containerr">
+      <div *ngFor="let personaje of favoritos">
+        <app-card [personaje]="personaje" [botonFav]="false"></app-card>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

@@ -1,12 +1,77 @@
 @import url('https://fonts.cdnfonts.com/css/homer-simpson-revised');
 
-h1 {
-    font-family: 'Homer Simpson Revised', sans-serif;
-    font-size: 60px;
-    text-align: center;
-    background: #FFD521;
-    color: red;
-    -webkit-text-stroke: .5px black;
-    text-stroke: .5px black;
+.containerr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
 }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.search-bar {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  border: solid black 1px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #6ed8ff;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #55bbe0;
+}
+
+.dropdown-list {
+  z-index: 10;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Homer Simpson Revised', sans-serif;
+}
+
+.dropdown-list li:hover {
+  background-color: #f5f5f5;
+}
